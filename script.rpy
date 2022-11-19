@@ -20,19 +20,19 @@ define n = Character("", kind=nvl, what_italic=True, what_color="#ffffff",  ctc=
 
 
 label start:
-    # MC wakes up
+    # ----MC intro----
     n "16 years. I've lived in Osaka for all my life until now. I'm going to miss my hometown and my friends. It'll definitely feel weird waking up in a different room everyday."
     n "...But I shouldn't think too much about that. Focus on the positives! Dad finally got the big promotion he was hoping for, and he's never been happier."
     n "The city seems scary and I'm worried about adapting to city life... But I'll try my best."
 
-    # alarm rings
+        # alarm rings
 
-    # MC wake up scene
+    # ----MC wake up----
     " " "Ngh..."
     " " "J-Just... five more minutes..."
     " " ". . ."
 
-    # alarm rings again
+        # alarm rings again
 
     " " ". . ."
     " " "Agh..."
@@ -40,17 +40,75 @@ label start:
     " " "!!!"
     " " "The time! Oh damn it, I'm gonna be late!"
 
-    # Mc leaves school for the first day
-    " " "I can't believe I'm gonna be late on the first day of school..! Day 1 and I'm already making a poor impression"
+    # ----Mc leaves school for the first day, running to school----
+    " " "I can't believe I'm gonna be late on the first day of school..! Day one and I'm already making a poor impression."
+    " " "...I really need to hurry."
+    " " ". . ."
 
-    # Mc sees Sukeban in an alley on the way to school
-    " " "Damn, What's going on over there?"
+    # ----Mc sees Sukeban in an alley on the way to school----
+    " " ". . ."
+    " " "! ?"
+    " " "Someone's yelling? Bruh, this early in the morning? Y'all, it's like 7 am, calm down."
+    " " "Is this what city mornings are always like?"
+
+        # insert thud sound
+
+    t "You bastard! What do you think you're doing?"
+    " " "--Huh?"
+    t "Thought you could get away with that, huh, Ahmed?"
+    "Andy" "N-No.. I don't even know who you are! Or Ahmed! Who are you?! Who's Ahmed???? What's happening???????"
+    "Andy" "I'm Andy!"
+    t "Don't play with me right now, I know who you are!"
+
+        # insert thud sound
+
+        # tsubaki first cg
+
+    t "Hah? What do you think you're looking at!?"
+    m "Me?"
+    t "Yeah, I'm talking to you. Why don't you mind your own business?"
+    m "Okay, okay! I was just about to leave, sheesh."
+    "Andy" "No... Don't leave me here!"
+    "Andy" "W-Wait, lady, calm down!"
+
+        # insert thud sound
+
+    # ----Continue walking----
+        # insert street png
+    " " "Is this what it's always like? City life is crazy, damn."
+    " " "So delinquents like that exist in real life too, huh? I guess things like the yakuza and mafia do exist in real life."
+    " " "I can't let these things distract me though. I'm gonna be late..!"
+
+    # ----Arriving at school----
+        # insert school png
+    " " "...I made it! Barely on time, though, and I still need to get to class..."
+    " " "What was my first class again...? Something about a seminar?"
+    " " ". . ."
+
+    "Boy A" "Guys, look! She's coming, she's coming!"
+    "Boy A" "The Rose of our school!"
+    "Boy B" "Dude, didn't you have a crush on The Rose since like elementary school?"
+    "Boy A" "Of course, man! Who wouldn't have a crush on The Rose? I still do!"
+    "Boy A" "The Rose's the top of our grade and she hasn't missed a single day of school! She's kind and beautiful too! A true 10/10 woman."
+    "Boy B" "Bro, what."
+
+    " " "? ?"
+    " " "...Is that a limo pulling up to the school?"
 
     # Mc sees ojou chan coming out of a limo
-    " " "Damn, Who's that rich chick?"
+        # chaerii first cg
+    "Butler" "We've arrived, my lady."
+    c "Oh, thank you."
+    "Boy A" "Bro, AND she's polite too! Lady Rose is the best!"
+    " " "...Lady Rose? ...The Rose of the school? These guys say 'rose' a little too much... Is this some kind of city slang I don't understand?"
+    " " "And what's with the red carpet...?"
+    " " "Bro, I just wanna get to school. Why is so much happening?"
+    " " "Agh, class is starting in a minute, I'm actually gonna be late. Where is this class?"
 
     # Mc introduces themselves at school
+    " " "Damn it, I'm late to class..."
     scene classroom
+
 
     $ MC = renpy.input("My name is...")
 
@@ -68,8 +126,8 @@ label start:
         "Rich Girl":
             $ c_points += 1
             show c
-            m "Are you rich or something?"
-            c "O-oh!"
+            m "omg the carpet lady from this morning"
+            c "O-oh! ...C-Carpet lady...?"
 
         "Delinquent":
             $ t_points += 1
