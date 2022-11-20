@@ -12,7 +12,6 @@ init:
     $ timer_range = 5
     $ timer_jump = 5
 
-
 define t = Character("Tsubaki")
 define c = Character("Chaerii")
 define m = Character("[MC]")
@@ -40,10 +39,12 @@ label start:
     " " "!!!"
     " " "The time! Oh damn it, I'm gonna be late!"
 
+
     # ----Mc leaves school for the first day, running to school----
     " " "I can't believe I'm gonna be late on the first day of school..! Day one and I'm already making a poor impression."
     " " "...I really need to hurry."
     " " ". . ."
+
 
     # ----Mc sees Sukeban in an alley on the way to school----
     " " ". . ."
@@ -53,31 +54,33 @@ label start:
 
         # insert thud sound
 
-    t "You bastard! What do you think you're doing?"
-    " " "--Huh?"
-    t "Thought you could get away with that, huh, Ahmed?"
+    "Delinquent" "You bastard! What do you think you're doing?"
+    " " "-Huh?"
+    "Delinquent" "Thought you could get away with that, huh, Ahmed?"
     "Andy" "N-No.. I don't even know who you are! Or Ahmed! Who are you?! Who's Ahmed???? What's happening???????"
     "Andy" "I'm Andy!"
-    t "Don't play with me right now, I know who you are!"
+    "Delinquent" "Don't play with me right now, I know who you are!"
 
         # insert thud sound
 
         # tsubaki first cg
 
-    t "Hah? What do you think you're looking at!?"
-    m "Me?"
-    t "Yeah, I'm talking to you. Why don't you mind your own business?"
-    m "Okay, okay! I was just about to leave, sheesh."
+    "Delinquent" "Hah? What do you think you're looking at!?"
+    " " "Me?"
+    "Delinquent" "Yeah, I'm talking to you. Why don't you mind your own business?"
+    " " "Okay, okay! I was just about to leave, sheesh."
     "Andy" "No... Don't leave me here!"
     "Andy" "W-Wait, lady, calm down!"
 
         # insert thud sound
+
 
     # ----Continue walking----
         # insert street png
     " " "Is this what it's always like? City life is crazy, damn."
     " " "So delinquents like that exist in real life too, huh? I guess things like the yakuza and mafia do exist in real life."
     " " "I can't let these things distract me though. I'm gonna be late..!"
+
 
     # ----Arriving at school----
         # insert school png
@@ -95,25 +98,30 @@ label start:
     " " "? ?"
     " " "...Is that a limo pulling up to the school?"
 
-    # Mc sees ojou chan coming out of a limo
+
+    # ----Mc sees ojou chan coming out of a limo----
         # chaerii first cg
     "Butler" "We've arrived, my lady."
-    c "Oh, thank you."
+    "Rich Girl" "Oh, thank you."
     "Boy A" "Bro, AND she's polite too! Lady Rose is the best!"
     " " "...Lady Rose? ...The Rose of the school? These guys say 'rose' a little too much... Is this some kind of city slang I don't understand?"
     " " "And what's with the red carpet...?"
     " " "Bro, I just wanna get to school. Why is so much happening?"
     " " "Agh, class is starting in a minute, I'm actually gonna be late. Where is this class?"
 
-    # Mc introduces themselves at school
-    " " "Damn it, I'm late to class... What was classroom number again? M2-208? God who built this school it's actually a maze."
+
+    # ----Mc introduces themselves at school----
+    " " "Damn it, I'm late to class... What was the classroom number again? M2-208? God who built this school, it's actually a maze."
+    " " "!"
+    " " "Oh, I think it's here."
+
     scene classroom
     
-    "Guregu Sensei" "Ok Class so we can all agree that the succesor of 0 is 1, and therefor-"
-    "m" "Ah.. excuse me, is this the computer science seminar?"
-    "Guregu Sensei" "Oh looks like we have a new face today! You must be..."
+    "Guregu Sensei" "Okay class so we can all agree that the succesor of 0 is 1, and therefor-"
+    " " "Ah... Excuse me, is this the computer science seminar?"
+    "Guregu Sensei" "Oh, looks like we have a new face today! You must be..."
     "Guregu Sensei" "Uh.............................................................................................."
-    "Guregu Sensei" "Why don't you introduce your self to the class?"
+    "Guregu Sensei" "Why don't you introduce yourself to the class?"
     
     $ MC = renpy.input("My name is...")
 
@@ -122,16 +130,26 @@ label start:
     if MC == "":
         $ player_name="Joe Mama"
         
-    "???" "What kinda bozo name is that? L "
-    "Guregu Sensei" "Ok why don't you have a seat..."
-    "Guregu Sensei" "Now class lets talk about the square root of 2"
-    
-    
+    "Guregu Sensei" "Okay, I'll be lenient since it's only your first day here, but please make sure to come on time in the future. Why don't you have a seat for now?"
+    "Guregu Sensei" "Now, class, lets talk about the square root of 2-"
+
+        # door opens sound
+
+    show T_HappyTalk at center
+    "Delinquent" "Yo, teach, I'm here! I made sure to come in this month."
+    "Guregu Sensei" "What? Are you trolling me right now?"
+    "Guregu Sensei" "This is a learning environment, and we all need to be here for everyone to learn."
+    "Guregu Sensei" "Please sit down, and I'll be continuing the lesson."
+    "Guregu Sensei" "So, class-"
     
 
-    # Free period time to pick who to talk to (Only one option)
+    # ----Free period time to pick who to talk to (Only one option)----
+        # show "Free Period" text
+
     $ c_points = 0
     $ t_points = 0
+
+    " " ""
 
     menu:
 
