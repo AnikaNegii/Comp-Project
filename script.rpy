@@ -106,16 +106,28 @@ label start:
     " " "Agh, class is starting in a minute, I'm actually gonna be late. Where is this class?"
 
     # Mc introduces themselves at school
-    " " "Damn it, I'm late to class..."
+    " " "Damn it, I'm late to class... What was classroom number again? M2-208? God who built this school it's actually a maze."
     scene classroom
-
-
+    
+    "Guregu Sensei" "Ok Class so we can all agree that the succesor of 0 is 1, and therefor-
+    "m" "Ah.. excuse me, is this the computer science seminar?"
+    "Guregu Sensei "Oh looks like we have a new face today! You must be..."
+    "Guregu Sensei" "Uh.............................................................................................."
+    "Guregu Sensei" "Why don't you introduce your self to the class?"
+    
     $ MC = renpy.input("My name is...")
 
     $ MC = MC.strip()
 
     if MC == "":
         $ player_name="Joe Mama"
+        
+    "???" "What kinda bozo name is that? L "
+    "Guregu Sensei" "Ok why don't you have a seat..."
+    "Guregu Sensei" "Now class lets talk about the square root of 2"
+    
+    
+    
 
     # Free period time to pick who to talk to (Only one option)
     $ c_points = 0
