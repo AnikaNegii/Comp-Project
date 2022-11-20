@@ -111,7 +111,7 @@ label start:
     
     "Guregu Sensei" "Ok Class so we can all agree that the succesor of 0 is 1, and therefor-"
     "m" "Ah.. excuse me, is this the computer science seminar?"
-    "Guregu Sensei "Oh looks like we have a new face today! You must be..."
+    "Guregu Sensei" "Oh looks like we have a new face today! You must be..."
     "Guregu Sensei" "Uh.............................................................................................."
     "Guregu Sensei" "Why don't you introduce your self to the class?"
     
