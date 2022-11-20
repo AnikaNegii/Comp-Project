@@ -109,7 +109,7 @@ label start:
     " " "Damn it, I'm late to class... What was classroom number again? M2-208? God who built this school it's actually a maze."
     scene classroom
     
-    "Guregu Sensei" "Ok Class so we can all agree that the succesor of 0 is 1, and therefor-
+    "Guregu Sensei" "Ok Class so we can all agree that the succesor of 0 is 1, and therefor-"
     "m" "Ah.. excuse me, is this the computer science seminar?"
     "Guregu Sensei "Oh looks like we have a new face today! You must be..."
     "Guregu Sensei" "Uh.............................................................................................."
