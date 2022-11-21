@@ -36,11 +36,13 @@ label start:
     " " ". . ."
     " " "Agh..."
     " " "Huh...?"
-    " " "!!!"
+    " " "! ! !"
     " " "The time! Oh damn it, I'm gonna be late!"
 
 
     # ----Mc leaves school for the first day, running to school----
+    scene street 
+    
     " " "I can't believe I'm gonna be late on the first day of school..! Day one and I'm already making a poor impression."
     " " "...I really need to hurry."
     " " ". . ."
@@ -63,27 +65,39 @@ label start:
 
         # insert thud sound
 
-        # tsubaki first cg
+    scene tsubaki_intro
 
     "Delinquent" "Hah? What do you think you're looking at!?"
     " " "Me?"
     "Delinquent" "Yeah, I'm talking to you. Why don't you mind your own business?"
-    " " "Okay, okay! I was just about to leave, sheesh."
-    "Andy" "No... Don't leave me here!"
-    "Andy" "W-Wait, lady, calm down!"
+    menu:
+        "Try to Help Him":
+            " " "Hey! What are you doing? Let go of him!"
+            "Delinquent" "Who are you to tell me what to do? You don't even know what's going on, get out of here!"
+            " " "She steps forward menacingly."
+            " " "Okay, okay! I was just about to leave, sheesh."
+            "Andy" "No... Don't leave me here!"
+            "Andy" "W-Wait, lady, calm down!"
+            
+        "Leave Him":
+            " " "Okay, okay! I was just about to leave, sheesh."
+            "Andy" "No... Don't leave me here!"
+            "Andy" "W-Wait, lady, calm down!"
 
         # insert thud sound
 
 
     # ----Continue walking----
-        # insert street png
+    scene street
+
     " " "Is this what it's always like? City life is crazy, damn."
     " " "So delinquents like that exist in real life too, huh? I guess things like the yakuza and mafia do exist in real life."
     " " "I can't let these things distract me though. I'm gonna be late..!"
 
 
     # ----Arriving at school----
-        # insert school png
+    scene school_outside
+
     " " "...I made it! Barely on time, though, and I still need to get to class..."
     " " "What was my first class again...? Something about a seminar?"
     " " ". . ."
@@ -100,7 +114,8 @@ label start:
 
 
     # ----Mc sees ojou chan coming out of a limo----
-        # chaerii first cg
+    scene chaerri_intro
+
     "Butler" "We've arrived, my lady."
     "Rich Girl" "Oh, thank you."
     "Boy A" "Bro, AND she's polite too! Lady Rose is the best!"
@@ -135,12 +150,20 @@ label start:
 
         # door opens sound
 
-    show T_HappyTalk at center
+    show t_happytalkblood
+
     "Delinquent" "Yo, teach, I'm here! I made sure to come in this month."
+
+    hide t_happytalkblood
+
     "Guregu Sensei" "What? Are you trolling me right now?"
     "Guregu Sensei" "This is a learning environment, and we all need to be here for everyone to learn."
     "Guregu Sensei" "Please sit down, and I'll be continuing the lesson."
     "Guregu Sensei" "So, class-"
+    " " ". . ."
+    " " ". . ."
+    " " ". . ."
+    
     
 
     # ----Free period time to pick who to talk to (Only one option)----
@@ -149,21 +172,41 @@ label start:
     $ c_points = 0
     $ t_points = 0
 
-    " " ""
+    " " "Free period, huh? It's still only the first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
+    " " ". . !"
+    
+    show c
+
+    " " "That's the rich girlie from this morning! Not only that crazy delinquent, but she's in my class too?"
+
+    hide c
+
+    " " "Are all the weirdos in my class? Is this normal in the city? The city is really an exciting place, huh!"
+    " " "Maybe I'll talk with one of them. Neither of them seem too busy either..."
+    
+    show c
+    
+    " " "The rich girl is studying by herself, but there are many eyes admiring her from a distance."
+    
+    hide c
+    show t_neutralblood
+    
+    " " "The delinquent is pouting by herself at her desk. She's wiping off her bat."
 
     menu:
-
         "Rich Girl":
             $ c_points += 1
             show c
-            m "omg the carpet lady from this morning"
-            c "O-oh! ...C-Carpet lady...?"
+            m "Hey, "
+            "Rich Girl" "O-oh! ...C-Carpet lady...?"
+            hide c
 
         "Delinquent":
             $ t_points += 1
             show t
             m "I saw you this morning..."
-            t "Tch!"
+            "Delinquent" "Tch!"
+            hide t
 
     # Mc internal monolouge, he finds out he had cleaning duty with both of them
     m "blahblahblah"
