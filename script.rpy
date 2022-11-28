@@ -24,14 +24,14 @@ label start:
     n "...But I shouldn't think too much about that. Focus on the positives! Dad finally got the big promotion he was hoping for, and he's never been happier."
     n "The city seems scary and I'm worried about adapting to city life... But I'll try my best."
 
-        # alarm rings
+    play sound "audio/alarm.wav"
 
     # ----MC wake up----
     " " "Ngh..."
     " " "J-Just... five more minutes..."
     " " ". . ."
 
-        # alarm rings again
+    play sound "audio/alarm.wav"
 
     " " ". . ."
     " " "Agh..."
@@ -54,7 +54,7 @@ label start:
     " " "Someone's yelling? Bruh, this early in the morning? Y'all, it's like 7 am, calm down."
     " " "Is this what city mornings are always like?"
 
-        # insert thud sound
+    play sound "audio/punch.mp3"
 
     "Delinquent" "You bastard! What do you think you're doing?"
     " " "-Huh?"
@@ -63,7 +63,7 @@ label start:
     "Andy" "I'm Andy!"
     "Delinquent" "Don't play with me right now, I know who you are!"
 
-        # insert thud sound
+    play sound "audio/punch.mp3"
 
     scene tsubaki_intro
 
@@ -84,7 +84,7 @@ label start:
             "Andy" "No... Don't leave me here!"
             "Andy" "W-Wait, lady, calm down!"
 
-        # insert thud sound
+    play sound "audio/punch.mp3"
 
 
     # ----Continue walking----
@@ -135,7 +135,7 @@ label start:
     "Guregu Sensei" "Okay class so we can all agree that the succesor of 0 is 1, and therefor-"
     " " "Ah... Excuse me, is this the computer science seminar?"
     "Guregu Sensei" "Oh, looks like we have a new face today! You must be..."
-    "Guregu Sensei" "Uh.............................................................................................."
+    "Guregu Sensei" "Uh..."
     "Guregu Sensei" "Why don't you introduce yourself to the class?"
     
     $ MC = renpy.input("My name is...")
@@ -173,11 +173,12 @@ label start:
     $ t_points = 0
 
     " " "Free period, huh? It's still only the first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
+    " " "Hmm..."
     " " ". . !"
     
     show c
 
-    " " "That's the rich girlie from this morning! Not only that crazy delinquent, but she's in my class too?"
+    " " "That's the rich girl from this morning! Not only that crazy delinquent, but she's in my class too?"
 
     hide c
 
@@ -186,26 +187,25 @@ label start:
     
     show c
     
-    " " "The rich girl is studying by herself, but there are many eyes admiring her from a distance."
+    " " "The rich girl is studying by herself, but there are many eyes admiring her from a distance. She's focusing on her work, but I'm curious about this morning."
     
     hide c
     show t_neutralblood
     
-    " " "The delinquent is pouting by herself at her desk. She's wiping off her bat."
+    " " "The delinquent is pouting by herself at her desk. She's wiping off her bat. She seemed scary this morning, but she seems to have calmed down. Should I ask her about this morning?"
 
     menu:
         "Rich Girl":
             $ c_points += 1
             show c
-            m "Hey, "
+            m "Hey."
             "Rich Girl" "O-oh! ...C-Carpet lady...?"
             hide c
 
         "Delinquent":
             $ t_points += 1
             show t
-            m "I saw you this morning..."
-            "Delinquent" "Tch!"
+            m ""
             hide t
 
     # Mc internal monolouge, he finds out he had cleaning duty with both of them
