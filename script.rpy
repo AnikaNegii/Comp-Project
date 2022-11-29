@@ -207,7 +207,11 @@ label start:
 
         "Delinquent":
             $ t_points += 1
-            m " "
+            m "I really want to know what was going on this morning..."
+            m "She seems kind of dangerous, but we're in school now. Surely she wouldn't be bold enough to do anything here, in front of everyone?"
+            m "She didn't seem to care about a random passerby like me seeing though..."
+            m ". . ."
+            m "Yeah, I should still be careful."
             show t_neutral
             m ""
             hide t_neutral
