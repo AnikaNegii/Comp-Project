@@ -174,19 +174,19 @@ label start:
     $ c_points = 0
     $ t_points = 0
 
-    " " "Free period, huh? It's still only my first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
-    " " "Hmm..."
+    m "Free period, huh? It's still only my first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
+    m "Hmm..."
     " " "Glancing around the classroom, you suddenly notice something."
-    " " ". . !"
+    m ". . !"
     
     show c_neutral
 
-    " " "That's the rich girl from this morning! Not only that crazy delinquent, but she's in my class too?"
+    m "That's the rich girl from this morning! Not only that crazy delinquent, but she's in my class too?"
 
     hide c_neutral
 
-    " " "Are all the weirdos in my class? Is this normal in the city? The city is really an exciting place, huh!"
-    " " "Maybe I'll talk with one of them. Neither of them seem too busy either..."
+    m "Are all the weirdos in my class? Is this normal in the city? The city is really an exciting place, huh!"
+    m "Maybe I'll talk with one of them. Neither of them seem too busy either..."
     
     show c_neutral
     
@@ -207,6 +207,7 @@ label start:
 
         "Delinquent":
             $ t_points += 1
+            m " "
             show t_neutral
             m ""
             hide t_neutral
@@ -215,8 +216,8 @@ label start:
     m "blahblahblah"
     
     # Mc meets both of them during cleaning duty
-    show c at left
-    show t at right
+    show c_neutral at left
+    show t_neutral at right
     
     c "Moew meow meow meoew meowejwemwoekwoewei"
     t "Barksabalr bark bakr barck barkijefwiefj"
@@ -251,8 +252,8 @@ label start:
             t "Hmph!"
     
     # Every one meets up in the class room
-    show c at right
-    show t at left
+    show c_neutral at right
+    show t_neutral at left
 
 
 
