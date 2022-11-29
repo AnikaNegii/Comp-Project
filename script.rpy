@@ -86,6 +86,8 @@ label start:
 
     play sound "audio/punch.mp3"
 
+    " " ". . ."
+
 
     # ----Continue walking----
     scene street
