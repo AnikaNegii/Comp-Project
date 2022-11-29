@@ -128,13 +128,13 @@ label start:
 
 
     # ----Mc introduces themselves at school----
-    " " "Damn it, I'm late to class... What was the classroom number again? M2-208? God who built this school, it's actually a maze."
+    " " "Damn it, I'm late to class... What was the classroom number again? M2-208? God, who built this school, it's actually a maze."
     " " "!"
     " " "Oh, I think it's here."
 
     scene classroom
     
-    "Guregu Sensei" "Okay class so we can all agree that the succesor of 0 is 1, and therefor-"
+    "Guregu Sensei" "Okay, class, so we can all agree that the succesor of 0 is 1, and therefor-"
     " " "Ah... Excuse me, is this the computer science seminar?"
     "Guregu Sensei" "Oh, looks like we have a new face today! You must be..."
     "Guregu Sensei" "Uh..."
@@ -174,24 +174,25 @@ label start:
     $ c_points = 0
     $ t_points = 0
 
-    " " "Free period, huh? It's still only the first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
+    " " "Free period, huh? It's still only my first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
     " " "Hmm..."
+    " " "Glancing around the classroom, you suddenly notice something."
     " " ". . !"
     
-    show c
+    show c_neutral
 
     " " "That's the rich girl from this morning! Not only that crazy delinquent, but she's in my class too?"
 
-    hide c
+    hide c_neutral
 
     " " "Are all the weirdos in my class? Is this normal in the city? The city is really an exciting place, huh!"
     " " "Maybe I'll talk with one of them. Neither of them seem too busy either..."
     
-    show c
+    show c_neutral
     
     " " "The rich girl is studying by herself, but there are many eyes admiring her from a distance. She's focusing on her work, but I'm curious about this morning."
     
-    hide c
+    hide c_neutral
     show t_neutralblood
     
     " " "The delinquent is pouting by herself at her desk. She's wiping off her bat. She seemed scary this morning, but she seems to have calmed down. Should I ask her about this morning?"
@@ -199,16 +200,16 @@ label start:
     menu:
         "Rich Girl":
             $ c_points += 1
-            show c
+            show c_neutral
             m "Hey."
             "Rich Girl" "O-oh! ...C-Carpet lady...?"
-            hide c
+            hide c_neutral
 
         "Delinquent":
             $ t_points += 1
-            show t
+            show t_neutral
             m ""
-            hide t
+            hide t_neutral
 
     # Mc internal monolouge, he finds out he had cleaning duty with both of them
     m "blahblahblah"
