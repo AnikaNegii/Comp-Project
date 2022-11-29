@@ -98,7 +98,7 @@ label start:
 
 
     # ----Arriving at school----
-    scene school_outside
+    scene outside_school
 
     " " "...I made it! Barely on time, though, and I still need to get to class..."
     " " "What was my first class again...? Something about a seminar?"
@@ -207,17 +207,17 @@ label start:
 
         "Delinquent":
             $ t_points += 1
-            m "I really want to know what was going on this morning..."
-            m "She seems kind of dangerous, but we're in school now. Surely she wouldn't be bold enough to do anything here, in front of everyone?"
-            m "She didn't seem to care about a random passerby like me seeing though..."
+            m "I really, really want to know what was going on this morning..."
+            m "She seemed pretty dangerous earlier, but we're in school now. Surely she wouldn't be bold enough to do anything here, in front of everyone?"
+            m "She didn't seem to care about a random passerby like me seeing, though..."
             m ". . ."
-            m "Yeah, I should still be careful."
+            m "Yeah, I should probably still be careful."
             show t_neutral
             m ""
             hide t_neutral
 
     # Mc internal monolouge, he finds out he had cleaning duty with both of them
-    m "blahblahblah"
+    " " "After Class"
     
     # Mc meets both of them during cleaning duty
     show c_neutral at left
