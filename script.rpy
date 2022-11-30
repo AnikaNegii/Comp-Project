@@ -27,7 +27,7 @@ label start:
     play sound "audio/alarm.wav"
 
     # ----MC wake up----
-    " " "Ngh..."
+    "Ngh..."
     " " "J-Just... five more minutes..."
     " " ". . ."
 
@@ -156,6 +156,10 @@ label start:
 
     "Delinquent" "Yo, teach, I'm here! I made sure to come in this month."
 
+    " " ". . !"
+    " " "That..."
+    " " "Isn't she the delinquent girl from the alleyway this morning?! She's in my class?"
+
     hide t_happytalkblood
 
     "Guregu Sensei" "What? Are you trolling me right now?"
@@ -174,19 +178,21 @@ label start:
     $ c_points = 0
     $ t_points = 0
 
-    m "Free period, huh? It's still only my first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
-    m "Hmm..."
+    " " "Free period, huh? It's still only my first day so there isn't really any work to do... Maybe I'll just watch Youtube?"
+    " " "Hmm..."
     " " "Glancing around the classroom, you suddenly notice something."
-    m ". . !"
+    " " ". . !"
     
     show c_neutral
 
-    m "That's the rich girl from this morning! Not only that crazy delinquent, but she's in my class too?"
+    " " "That's the rich girl from this morning!"
+    " " "I don't really get it but she's the 'Rose of the school,' or something like that, isn't she? She even had a whole limo and red carpet for her this morning..."
+    " " "Not only that crazy delinquent, but someone like her is in my class too?"
 
     hide c_neutral
 
-    m "Are all the weirdos in my class? Is this normal in the city? The city is really an exciting place, huh!"
-    m "Maybe I'll talk with one of them. Neither of them seem too busy either..."
+    " " "How come all these eccentric people are in my class? Is this normal in the city? The city is really an unusual place, huh."
+    " " "Maybe I'll talk with one of them. Neither of them seem too busy either..."
     
     show c_neutral
     
@@ -207,21 +213,40 @@ label start:
 
         "Delinquent":
             $ t_points += 1
-            m "I really, really want to know what was going on this morning..."
-            m "She seemed pretty dangerous earlier, but we're in school now. Surely she wouldn't be bold enough to do anything here, in front of everyone?"
-            m "She didn't seem to care about a random passerby like me seeing, though..."
-            m ". . ."
-            m "Yeah, I should probably still be careful."
+            " " "I really, really want to know what was going on this morning..."
+            " " "She seemed pretty dangerous earlier, but we're in school now. Surely she wouldn't be bold enough to do anything here, in front of everyone?"
+            " " "She didn't seem to care about a random passerby like me seeing, though..."
+            " " ". . ."
+            " " "Yeah, I should probably still be careful."
             show t_neutral
-            m ""
-            hide t_neutral
+            m "H-Hello. You're the girl from this morning, aren't you? ...The one in the alleyway?"
+            " " "What am I saying right now? This delinquent just finished wiping blood off her bat in front of me and now I'm asking about her crimes..."
+            " " "I'm curious. I'm definitely really curious about what happened, but asking that out of nowhere is-!"
+            show t_angrytalk
+            "Delinquent" "Huh? Who are you? Interrupting my cleaning out of nowhere..."
+            " " "...She's already angry."
+            m "A-Ah, sorry. You don't remember me? You got all mad at me for looking into the alleyway. You were really mad at that Ahmed guy for some reason."
+            " " "Ah, now I'm recounting her anger towards me? I'm kind of just asking for her to smash my head in at this point, aren't I?"
+            show t_angry
+            "Delinquent" ""
 
-    # Mc internal monolouge, he finds out he had cleaning duty with both of them
+    # -----Mc internal monolouge, he finds out he had cleaning duty with both of them----
     " " "After Class"
+    " " "Class is finally over..."
+    " " "Since I joined in the middle of the year, there's still so much content I need to catch up on."
+    "Guregu Sensei" "Oh, excuse me,"
     
     # Mc meets both of them during cleaning duty
+    # internal thoughts about cleaning with the two girls
+    
     show c_neutral at left
     show t_neutral at right
+
+    if c_points == 1:
+        t "Name's Tsubaki."
+    if t_points == 1:
+        c "Oh, I'm Chaerii."
+
     
     c "Moew meow meow meoew meowejwemwoekwoewei"
     t "Barksabalr bark bakr barck barkijefwiefj"
@@ -232,8 +257,6 @@ label start:
     m "Damn, who am I gonna go after"
 
     # Mc picks 
-
-
     $ time = 2.5
     $ timer_range = 2.5
     $ timer_jump = 'menu1_slow'
