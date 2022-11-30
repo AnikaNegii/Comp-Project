@@ -285,7 +285,7 @@ label start:
     show t_irritatedtalk with dissolve
     t1 "Huh? What did you say, punk?"
 
-    i "{i}As she swings her bat to point at me, a bit of blood from the bat flys off{/i}"
+    i "{i}As she swings her bat to point at me, a bit of blood from the bat flys off.{/i}"
 
     "Girl 1" "GASP!!!"
     "Boys 1" "YOU DARE GET YOUR FILTY BLOOD ON 'THE ROSE', TSUBAKI?!?!11"
