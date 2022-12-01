@@ -137,10 +137,10 @@ label start:
     scene tsubaki_intro with dissolve
     t1 "Hah? What did you say!?"
     i "{i}Ah. Did I say that out loud?{/i}"
-    i "{i}Dude, I knew this was a dark alley way, but why is there actually an abyss behind her...{/i}"
+    i "{i}Dude, I knew this was a dark alleyway, but why is there actually an abyss behind her...{/i}"
 
     t1 "Mind your own business, ok?!"
-    me "Hey, you go to the same school as me, right?"
+    me "Hey, you know where Top Elite High School is?"
     t1 "..."
     me "I was wondering if you knew the directions?"
     t1 "Tch. I was wondering if you were bold or just dumb. Just use a GPS, idiot."
@@ -152,7 +152,7 @@ label start:
 
     menu:
         "Try to Help Him":
-            me "Yo, as I said before we go to the same school. It starts in 30 minutes so if you don't want to be late then I suggest you get going."
+            me "Yo. He said he wasn't even the right guy, maybe lay off him a little bit?"
             t1 "Who are you to tell me what to do? And I suggest YOU get going before I beat you up too."
             i "She steps forward menacingly."
             me "Okay, okay! I was just letting you know, sheesh."
@@ -199,7 +199,7 @@ label start:
 
 
     # ----Mc sees ojou chan coming out of a limo----
-    scene chaerri_intro
+    scene chaerii_intro
 
     "Butler" "We've arrived, my lady."
     "Rich Girl" "Oh, thank you."
@@ -278,11 +278,11 @@ label start:
     i "{i}As you noticed before, the delinquent has blood smeared on her face and bat trying to wipe it off.{/i}"
     i "{i}That poor NPC who got beat up... {/i}"
 
-    show t_confused with dissolve
+    show t_confusedblood with dissolve
     t1 "You got a crush on me or something? You keep staring."
     m "I'm staring 'cause you're bringing around a goofy ahh bat everywhere."
 
-    show t_irritatedtalk with dissolve
+    show t_irritatedtalkblood with dissolve
     t1 "Huh? What did you say, punk?"
 
     i "{i}As she swings her bat to point at me, a bit of blood from the bat flys off.{/i}"
@@ -297,9 +297,13 @@ label start:
     "Girl 2" "B-but, Lady Ro-"
 
     c "I'll be back...  I'm just going to the restroom to clean up a bit."
-    t "Pathetic... Chaerii..."
+    t "Pathetic, Chaerii..."
 
-    i "{i}As The Rose left, you begin to feel tention in the air. {/i}"
+    hide t_neutralblood
+    hide t_confusedblood
+    hide t_irritatedtalkblood
+
+    i "{i}As The Rose left, you began to feel tention in the air. {/i}"
 
     "Girl 3" "Ugh, she's always like this."
     "Boy 2" "I know, honestly, it would be better if Tsubaki just didn't show up at all."
@@ -309,53 +313,47 @@ label start:
 
     menu:
         "Mind Your Business":
-            i "bruh"
+            i "{i}Those two attract gossip like crazy, huh? That's what happens when you stick out as much as those two, I guess.{/i}"
+            i "{i}It's not my business, though. I just wanna get through the first day of classes.{/i}"
+            i "{i}You ignore the gossiping, and focus on completeing catchup work for the semester.{/i}"
+            i "..."
+            i "..."
+            i "..."
+            show t_neutraltalk with dissolve
+            t "...Um."
+            hide t_neutraltalk
+            "..."
+            "..."
           
-        "Eavesdrop":
-            i "BRUH"
+        "Ask Them About It":
+            i "{i}Those two attract gossip like crazy, huh? That's what happens when you stick out as much as those two, I guess.{/i}"
+            i "{i}I should probably avoid all the drama. Try not to get involved. But damn if I'm not curious.{/i}"
+            i "{i}Yeah, sure, I'll bite on this. I should learn more about the social structure at this school, anyways. I seem to be the only one out-of-the-loop here.{i/}"
+            m "Yo, those two got shit between them or something?"
+            "..."
+            "..."
 
         "Leave the Classroom":
-            i "Bruh"
-      
-
-
-    
-    show c_neutral
-
-    m "That's the rich girl from this morning! Not only that crazy delinquent, but she's in my class too?"
-
-    hide c_neutral
-
-    m "Are all the weirdos in my class? Is this normal in the city? The city is really an exciting place, huh!"
-    m "Maybe I'll talk with one of them. Neither of them seem too busy either..."
-    
-    show c_neutral
-    
-    " " "The rich girl is studying by herself, but there are many eyes admiring her from a distance. She's focusing on her work, but I'm curious about this morning."
-    
-    hide c_neutral
-    show t_neutralblood
-    
-    " " "The delinquent is pouting by herself at her desk. She's wiping off her bat. She seemed scary this morning, but she seems to have calmed down. Should I ask her about this morning?"
-
-    menu:
-        "Rich Girl":
-            $ c_points += 1
-            show c_neutral
-            m "Hey."
-            "Rich Girl" "O-oh! ...C-Carpet lady...?"
+            i "{i}Those two attract gossip like crazy, huh? That's what happens when you stick out as much as those two, I guess.{/i}"
+            i "{i}I don't want to hear any of this gossip right now. They're talking so loudly, too.{/i}"
+            i "{i}Well, it's free period. I'll just see if I can go study somewhere else.{/i}"
+            scene hallway with dissolve
+            show c_neutral with dissolve
+            i "{i}You collect your belongings and exit the classroom silently. When you exit, you see The Rose standing in the hallway.{/i}"
+            m "Hey, you good?"
+            c "Ah..."
             hide c_neutral
+            "..."
+            "..."
+    
+    scene outside_school
+    show c_happy at left 
+    show t_happytalk at right
+    c "This is the end for now lol"
+    t "Our project was too ambitious for our time frame."
 
-        "Delinquent":
-            $ t_points += 1
-            m "I really want to know what was going on this morning..."
-            m "She seems kind of dangerous, but we're in school now. Surely she wouldn't be bold enough to do anything here, in front of everyone?"
-            m "She didn't seem to care about a random passerby like me seeing, though..."
-            m ". . ."
-            m "Yeah, I should still be careful."
-            show t_neutral
-            m ""
-            hide t_neutral
+    return
+
 
     # Mc internal monolouge, he finds out he had cleaning duty with both of them
     m "blahblahblah"
@@ -385,14 +383,14 @@ label start:
         "Rich Girl":
             hide screen countdown
             $ c_points += 1
-            show c
+            show c_neutral
             m "Daijoubu!!! ^^"
             c " 0////0 "
 
         "Delinquent":
             hide screen countdown
             $ t_points += 1
-            show t
+            show t_neutral
             m "Whats wrong bby girl"
             t "Hmph!"
     
@@ -494,3 +492,4 @@ label start:
     #     n "Anyway, let's do something else."
 
     # return
+
